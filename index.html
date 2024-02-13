@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            cursor: pointer;
+        }
+
+        span {
+            font-size: 150px;
+            color: white;
+            text-shadow: 5px 5px 10px blue;
+            font-weight: bolder;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        span.active {
+            animation: jump 2s ease-in-out;
+        }
+
+        @keyframes jump {
+            0% {
+                transform: translate(0, 0) rotate(180deg);
+            }
+
+            100% {
+                transform: scale(2.5) translate(0, -180px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <span>P</span>
+        <span>R</span>
+        <span>O</span>
+        <span>C</span>
+        <span>O</span>
+        <span>D</span>
+        <span>E</span>
+    </div>
+
+    <script>
+
+        const container = document.querySelectorAll("span");
+
+        console.log(container);
+
+        container.forEach((item) => {
+            item.addEventListener("click", function () {
+                item.classList.toggle("active");
+
+            })
+        });
+
+
+    </script>
+</body>
+
+</html>
